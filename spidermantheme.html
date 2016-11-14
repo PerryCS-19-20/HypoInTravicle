@@ -11,22 +11,15 @@ and open the template in the editor.
         <title>Interactive Spider-Man Theme</title>
         
         <script>    
-            function changeColorTo(colorName){
-                document.body.style.color= colorName;
+            function changeColorTo(colorName, el){
+                el.style.color= colorName;
+                el.style.fontWeight= "bold";
             }
             
-            function changeColorFrom(){
-                document.body.style.color = "black";
-            }
-            
-            function makeBold(){
-                document.body.style.fontWeight= "bold";
-            }
-            
-            function unBold(){
-                document.body.style.fontWeight= "normal";
-            }
-            
+            function changeColorFrom(el){
+                el.style.color = "black";
+                el.style.fontWeight= "normal";
+            }                       
         </script>
         
     </head>
@@ -34,82 +27,87 @@ and open the template in the editor.
         <h1>Interactive Spider-Man Theme! Drag your mouse over the words!</h1>
         
         <br>
+        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiE5In43KjQAhVLVWMKHRHdA7oQyCkIHTAA&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DSUtziaZlDeE&usg=AFQjCNFx3P36BkdUTGjaPBBNFTzNMZkD2A&bvm=bv.138493631,d.cGc">
+            Spider-Man Theme Song
+        </a>
+        
+        <br>
         <h3>Verse #1</h3>
         <br>
         
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             Spider
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             Man,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             Spider
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             Man,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             does
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             whatever
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             a
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             spider
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             can.
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             Spins
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             a
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             web,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             any
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             size.
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             Catches
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             thieves,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             just
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             like
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             flies.
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             Look
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             out!
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             Here
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this);" >
             comes
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Spider
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Man!
         </span>
         
@@ -117,79 +115,79 @@ and open the template in the editor.
         <h3>Verse #2</h3>
         <br>
         
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Is
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             he
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             strong?
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Listen
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             bud,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             he's
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             got
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             radioactive
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             blood.
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Can
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             he
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             swing,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             from
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             a
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             thread?
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Take
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             a
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             look,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             overhead.
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Hey,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             there!
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             There
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             goes
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Spider
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Man!
         </span>
         
@@ -197,70 +195,70 @@ and open the template in the editor.
         <h3>Verse #3</h3>
         <br>
         
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             In
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             the
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             chill
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             of
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             the
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             night,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             at
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             the
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             scene
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             of
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             the
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             crime,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             like
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             a
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             streak
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             of
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             light,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             he
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             arrives,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             just
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             in
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             time!
         </span>
         
@@ -268,74 +266,107 @@ and open the template in the editor.
         <h3>Verse #5</h3>
         <br>
         
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Spider
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Man,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Spider
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Man.
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Friendly
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             neighborhood
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Spider
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Man.
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Wealth
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             and
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             fame,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             he
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             ignores,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             action
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             is,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             his
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             reward.
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
-            Look
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            To
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
-            out,
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            him,
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
-            here
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            life
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
-            comes
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            is 
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            a
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            great
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            big
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            bang-up,
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            Wherever
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            there's
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            a
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            hang-up,
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            you'll
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            find
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            the
+        </span>
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
             Spider
         </span>
-        <span onmouseover="changeColorTo('red'); makeBold();" onmouseout="changeColorFrom(); unBold();">
-            Man
+        <span onmouseover="changeColorTo('red', this); " onmouseout="changeColorFrom(this); ">
+            Man!!!
         </span>
         
     </body>
