@@ -25,7 +25,215 @@ canvas{
 
 <script>
 	window.onload = function() {
+var DELAY = 40;
+var SPEED = 5;
+var MAX_SPEED = 12;
+var dy = SPEED;
+var POINTS_PER_ROUND = 5;
+var DUST_RADIUS = 3;
+var DUST_BUFFER = 10;
 
+var copter;
+
+var obstacle;
+var OBSTACLE_WIDTH = 30;
+var OBSTACLE_HEIGHT = 100;
+
+var TERRAIN_WIDTH = 10;
+var MIN_TERRAIN_HEIGHT = 20;
+var MAX_TERRAIN_HEIGHT = 50;
+
+var points = 0;
+var score;
+
+var isClicking = false;
+
+var top_terrain = [];
+var bottom_terrain = [];
+var dust = [];
+
+function start(){
+	setUp();
+    setTimer(game, DELAY);
+    mouseClickMethod(switchUp);
+    //mouseUpMethod(switchDown);
+}
+
+function loadScreen(){
+    setBackgroundColor(Color.green);
+    
+}
+
+function setUp(){
+    
+    setBackgroundColor(Color.black);
+    addTerrain();
+    copter = new WebImage(ImageLibrary.Objects.helicopter);
+    copter.setSize(50, 20);
+    copter.setColor(Color.blue);
+    copter.setPosition(getWidth() / 3, getHeight() / 2);
+    add(copter);
+    
+    score = new Text("Score: " + points,"30pt Arial");
+    score.setPosition(10, score.getHeight() + 10);
+    score.setColor(Color.white);
+    add(score);
+    
+    obstacle = new Rectangle(OBSTACLE_WIDTH, OBSTACLE_HEIGHT);
+    obstacle.setColor(Color.green);
+    obstacle.setPosition(getWidth(), Randomizer.nextInt(0, getHeight() - OBSTACLE_HEIGHT));
+    add(obstacle);
+}
+
+function game(){
+    updateScore();
+    if(hitWall()){
+        lose();
+        return;
+    }
+    var collider = getCollider();
+    if(collider != null){
+        lose();
+        return;
+    }
+    copter.move(0, dy);
+    updateSpeed();
+    moveObstacles();
+    moveTerrain();
+    addDust();
+    moveDust();
+}
+
+function switchUp(e){
+   isClicking = true;
+}
+
+function switchDown(e){
+    isClicking = false;
+}
+
+function moveObstacles(){
+    obstacle.move(-SPEED, 0);
+    if(obstacle.getX() + OBSTACLE_WIDTH == 0){
+        obstacle.setPosition(getWidth(), Randomizer.nextInt(MAX_TERRAIN_HEIGHT, getHeight() - OBSTACLE_HEIGHT - MAX_TERRAIN_HEIGHT));
+    }
+}
+
+function updateSpeed(){
+    if(isClicking == true){
+        dy = -10;
+        if(dy < -MAX_SPEED){
+            dy = -MAX_SPEED;
+        }
+        isClicking = false;
+    } else if(isClicking == false){
+        dy += 1;
+        if(dy > MAX_SPEED){
+            dy = MAX_SPEED;
+        }
+    }
+}
+
+function hitWall(){
+    var hitCeiling = copter.getY() <= 0;
+    var hitFloor = copter.getY() + copter.getHeight() >= getHeight();
+    return hitCeiling || hitFloor;
+}
+
+function lose(){
+    stopTimer(game);
+    var txt = new Text("You Lose!", "30pt Arial");
+    txt.setPosition(getWidth() / 2 - txt.getWidth() / 2, getHeight() / 2 - txt.getHeight() / 2);
+    txt.setColor(Color.red);
+    add(txt);
+}
+
+function getCollider(){
+    var topLeft = getElementAt(copter.getX() - 1, copter.getY() - 1);
+    if(topLeft != null){
+        return topLeft;
+    }
+    
+    var topRight = getElementAt(copter.getX() + copter.getWidth() + 1, copter.getY() - 1);
+    if(topRight != null){
+        return topRight;
+    }
+    
+    var bottomLeft = getElementAt(copter.getX() - 1, copter.getY() + copter.getHeight() + 1);
+    if(bottomLeft != null){
+        return bottomLeft;
+    }
+    
+    var bottomRight = getElementAt(copter.getX() + copter.getWidth() + 1, copter.getY() + copter.getHeight() + 1);
+    if(bottomRight != null){
+        return bottomRight;
+    } 
+    
+    return null;
+}
+
+function addTerrain(){
+    for(var i = 0; i <= getWidth() / TERRAIN_WIDTH; i++){
+        var height = Randomizer.nextInt(MIN_TERRAIN_HEIGHT, MAX_TERRAIN_HEIGHT);
+        var topTerrain = new Rectangle(TERRAIN_WIDTH, height);
+        topTerrain.setColor(Color.green);
+        topTerrain.setPosition(TERRAIN_WIDTH * i, 0);
+        top_terrain.push(topTerrain);
+        add(topTerrain);
+        
+        height = Randomizer.nextInt(MIN_TERRAIN_HEIGHT, MAX_TERRAIN_HEIGHT);
+        var bottomTerrain = new Rectangle(TERRAIN_WIDTH, height);
+        bottomTerrain.setColor(Color.green);
+        bottomTerrain.setPosition(TERRAIN_WIDTH * i, getHeight() - height);
+        bottom_terrain.push(bottomTerrain);
+        add(bottomTerrain);
+        
+    }
+}
+
+function moveTerrain(){
+    for(var i = 0; i < top_terrain.length; i++){
+        var obj1 = top_terrain[i];
+        var obj2 = bottom_terrain[i];
+        
+        obj1.move(-SPEED, 0);
+        obj2.move(-SPEED, 0);
+        
+        if(obj1.getX() <= -obj1.getWidth() && obj2.getX() <= obj2.getWidth()){
+            obj1.setPosition(getWidth(), obj1.getY());
+            obj2.setPosition(getWidth(), obj2.getY());
+        }
+    }
+    
+}
+
+function updateScore(){
+    if(copter.getX() >= obstacle.getX() && copter.getX() <= obstacle.getX() + obstacle.getWidth()){
+        points += POINTS_PER_ROUND;
+        score.setText("Score: " + points);
+    }
+}
+
+function addDust(){
+    var d = new Circle(DUST_RADIUS);
+    d.setPosition(copter.getX() - d.getWidth(), copter.getY() + DUST_BUFFER);
+    d.setColor("#cccccc");
+    dust.push(d);
+    add(d);
+}
+
+function moveDust(){
+    for(var i = 0; i < dust.length; i++){
+        var d = dust[i];
+        d.move(-SPEED, 0);
+        d.setRadius(d.getRadius() - .1);
+        if(d.getX() < 0){
+            remove(d);
+            dust.remove(i);
+            i--;
+        }
+    }
+}
     if (typeof start === 'function') {
         start();
     }
