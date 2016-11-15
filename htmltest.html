@@ -1,0 +1,25 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <textarea rows="10" cols="80" id="inputText">Input html to test here</textarea>
+        <br>
+        <button onclick="textHTML();">Test!</button>
+        <br>
+        <span id="s1"></span>
+        <script>
+            function textHTML(){
+                var userInput = document.getElementById("inputText");
+                var spanThing = document.getElementById("s1");
+                spanThing.innerHTML = userInput.value;
+            }
+        </script>
+    </body>
+</html>
