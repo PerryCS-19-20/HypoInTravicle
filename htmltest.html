@@ -8,12 +8,14 @@ and open the template in the editor.
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-    <body>
-        <textarea rows="10" cols="80" id="inputText">Input html to test here</textarea>
-        <br>
-        <button onclick="textHTML();">Test!</button>
-        <br>
-        <span id="s1"></span>
+    <body style="background-color: blue">
+        <center>
+            <textarea rows="50" cols="200" id="inputText">Input html to test here</textarea>
+            <br>
+            <button onclick="textHTML();">Test!</button>
+            <br>
+            <span style="background-color: white" id="s1"></span>
+        </center>
         <script>
             function textHTML(){
                 var userInput = document.getElementById("inputText");
