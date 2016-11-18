@@ -1,0 +1,35 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your Personal To-Do List</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+                        
+        </style>
+    </head>
+    <body style="background-Color: green">
+        <center>
+            <textarea rows="50" cols="200" id="inputText">Input html to test here</textarea>
+            <br>
+            <button onclick="createList();">Add to List!</button>
+            <br>
+            
+        </center>
+    <ul style="background-color: white" id="s2">
+        
+    </ul>
+        <script>
+            function createList(){
+                var userInput = document.getElementById("inputText");
+                var list = document.getElementById("s2");
+                var listItem = document.createElement("li");
+                listItem.textContent = userInput.value;
+                list.appendChild(listItem);
+            }
+        </script>
+    </body>
+</html>
