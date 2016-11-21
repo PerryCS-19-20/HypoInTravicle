@@ -13,15 +13,13 @@ and open the template in the editor.
     </head>
     <body style="background-Color: green">
         <center>
-            <textarea rows="50" cols="200" id="inputText">Input html to test here</textarea>
+            <textarea rows="50" cols="200" id="inputText">Input an item to add to you list here</textarea>
             <br>
             <button onclick="createList();">Add to List!</button>
             <br>
-            
+            <h1 style="background-color: white">List</h1>
+            <ul style="background-color: white" id="s2"></ul>            
         </center>
-    <ul style="background-color: white" id="s2">
-        
-    </ul>
         <script>
             function createList(){
                 var userInput = document.getElementById("inputText");
