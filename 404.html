@@ -313,30 +313,54 @@
             function play(num){
                 var cell = document.getElementById(num);
                 var valid = cell.textContent == "" && winner == null;
+                var turn = document.getElementById("s1");
+                
                 if(valid && player % 2 != 0){
                     cell.textContent = "X";
-                    player++;
+                    player = 1 - player ;
                 } else if(valid && player % 2 == 0){
                     cell.textContent = "O";
-                    player++;
+                    player = 1 - player ;
+                }
+                
+                if(player % 2 == 0){
+                    turn.textContent = "Player's Turn: O"
+                } else {
+                    turn.textContent = "Player's Turn: X"
                 }
             }
             
             function checkWinner(num){
-                var winLines = new Grid([
-                    [1, 2, 3],
-                    [4, 5, 6],
-                    [7, 8, 9],
-                    [1, 4, 7],
-                    [2, 5, 8],
-                    [3, 6, 9],
-                    [1, 5, 9],
-                    [3, 5, 7]
-                ]);
+                checkCells("1","2","3");
+                checkCells("4","5","6");
+                checkCells("7","8","9");
+                checkCells("1","4","7");
+                checkCells("2","5","8");
+                checkCells("3","6","9");
+                checkCells("1","5","9");
+                checkCells("3","5","7");
+            }
+
+            function checkCells(id1, id2, id3){
+                var elem1 = document.getElementById(id1);
+                var elem2 = document.getElementById(id2);
+                var elem3 = document.getElementById(id3);
+                var winner = elem1.textContent == elem2.textContent && elem2.textContent == elem3.textContent && elem1.textContent != "";
+                var turn = document.getElementById("s1");
                 
+                if(winner){
+                    elem1.style.color = "red";
+                    elem2.style.color = "red";
+                    elem3.style.color = "red";
+                    turn.textContent = "Winner!";
+                }
             }
         </script>
         <br>
+        <br>
+        <h1>
+            Tic-Tac-Toe! Refresh to Start Over.
+        </h1>
         <table>
             <tr>
                 <td id="1" onclick="play('1'); checkWinner('1');"></td>
@@ -354,5 +378,9 @@
                 <td id="9" onclick="play('9'); checkWinner('9');"></td>
             </tr>
         </table>
+        <br>
+        <h1 id='s1'>
+            Player's Turn: X
+        </h1>
     </body>
 </html>
