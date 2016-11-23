@@ -22,6 +22,13 @@
                 font-size: 80px;
                 text-align: center;
               }
+              
+              @font-face{
+                  font-family: 'Geholiday';
+                  src: url('https://perryma.tk/se/Geholiday.ttf') format('truetype');
+                  font-weight: normal;
+                  font-style: normal;
+              }
         </style>
 
     </head>
@@ -316,10 +323,10 @@
                 var turn = document.getElementById("s1");
                 
                 if(valid && player % 2 != 0){
-                    cell.textContent = "X";
+                    cell.textContent = getLetter();
                     player = 1 - player ;
                 } else if(valid && player % 2 == 0){
-                    cell.textContent = "O";
+                    cell.textContent = getLetter();
                     player = 1 - player ;
                 }
                 
@@ -353,6 +360,27 @@
                     elem2.style.color = "red";
                     elem3.style.color = "red";
                     turn.textContent = "Winner!";
+                }
+            }
+            
+            function getLetter(){
+                if(holiday()=="Thanksgiving"){
+                    
+                }
+                if(holiday()=="Christmas"){
+                    
+                }
+                if(holiday()=="Easter"){
+                    
+                }
+                if(holiday()=="Thanksgiving"){
+                    
+                }
+                if(holiday()=="Thanksgiving"){
+                    
+                }
+                if(holiday()=="Thanksgiving"){
+                    
                 }
             }
         </script>
