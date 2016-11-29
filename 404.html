@@ -30,7 +30,7 @@
                   font-style: normal;
               }
         </style>
-
+        <script src="https://perryma.tk/se/holidays.js"></script>
     </head>
 
     <body>
@@ -322,14 +322,10 @@
                 var valid = cell.textContent == "" && winner == null;
                 var turn = document.getElementById("s1");
                 
-                if(valid && player % 2 != 0){
+                if(valid){
                     cell.textContent = getLetter();
                     player = 1 - player ;
-                } else if(valid && player % 2 == 0){
-                    cell.textContent = getLetter();
-                    player = 1 - player ;
-                }
-                
+                }                
                 if(player % 2 == 0){
                     turn.textContent = "Player's Turn: O"
                 } else {
@@ -365,22 +361,53 @@
             
             function getLetter(){
                 if(holiday()=="Thanksgiving"){
-                    
+                    if(player % 2 == 0){
+                        return "n";
+                    } else if(player % 2 != 0){
+                        return "m";
+                    }
                 }
-                if(holiday()=="Christmas"){
-                    
+                else if(holiday()=="Christmas"){
+                    if(player % 2 == 0){
+                        return "p";
+                    } else if(player % 2 != 0){
+                        return "o";
+                    }
                 }
-                if(holiday()=="Easter"){
-                    
+                else if(holiday()=="Easter"){
+                    if(player % 2 == 0){
+                        return "d";
+                    } else if(player % 2 != 0){
+                        return "e";
+                    }
                 }
-                if(holiday()=="Thanksgiving"){
-                    
+                else if(holiday()=="Valentines"){
+                    if(player % 2 == 0){
+                        return "c";
+                    } else if(player % 2 != 0){
+                        return "a";
+                    }
                 }
-                if(holiday()=="Thanksgiving"){
-                    
+                else if(holiday()=="Halloween"){
+                    if(player % 2 == 0){
+                        return "j";
+                    } else if(player % 2 != 0){
+                        return "i";
+                    }
                 }
-                if(holiday()=="Thanksgiving"){
-                    
+                else if(holiday()=="4th of July"){
+                    if(player % 2 == 0){
+                        return "g";
+                    } else if(player % 2 != 0){
+                        return "h";
+                    }
+                }
+                else {
+                    if(player % 2 != 0){
+                        return "X";
+                    } else if(player % 2 == 0){
+                        return "O";
+                    }
                 }
             }
         </script>
