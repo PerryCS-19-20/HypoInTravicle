@@ -1,0 +1,62 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Times Table</title>
+        <style>
+            table, td, th {
+                border: solid 1px;
+            }
+            td {
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body onload="buildTimesTable()">
+        <h1>Multiplication Table</h1>
+        Table Width:<input type="range" id="tableWidth" min="1" max="20" value="10" onchange
+                           ="buildTimesTable();">
+        <br>
+        <script>
+            function buildTimesTable() {                
+                var timesTable = document.getElementById("timesTable");
+                if (timesTable != null) {
+                    timesTable.parentNode.removeChild(timesTable);
+                }
+                
+                var timesTable=document.createElement("table");
+                timesTable.id= "timesTable";
+                
+                var body = document.body;
+                body.appendChild(timesTable);
+                
+                var width = timesTable.value;
+                
+                for(var i = 0; i < width; i++){
+                    var row = document.createElement("tr");
+                    timesTable.appendChild(row);
+                    for(var x = 0; x < width; x++){
+                        if(x == 0){
+                            var head = document.createElement("th");
+                            head.textContent = i;
+                            row.appendChild(head);
+                        } else if (i == 0){
+                            var head = document.createElement("th");
+                            head.textContent = x;
+                            row.appendChild(head);
+                        } else {
+                            var elem = document.createElement("td");
+                            elem.textContent = i * x;
+                            row.appendChild(elem);
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
