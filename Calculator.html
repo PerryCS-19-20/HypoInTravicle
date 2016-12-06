@@ -3,16 +3,32 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>Cylinder Calc</title>
+        <title>Quadratic Formula Calc</title>
         <script>
             function calc() {
-                var h = parseFloat(document.getElementById("height").value);
-                var r = parseFloat(document.getElementById("rad").value);
-                var vol = document.getElementById("vol");
+                var x1 = parseFloat(document.getElementById("X2 Coefficient").value);
+                var x2 = parseFloat(document.getElementById("X Coefficient").value);
+                var C = parseFloat(document.getElementById("C").value);
+                var answer1 = document.getElementById("1");
+                var answer2 = document.getElementById("2");
+                
+                if (!(x1 > 0 || x1 >= 0)){
+                    x1 = 1;
+                } else if (!(x2 > 0 || x2 >= 0)){
+                    x2 = 1;
+                } else if (!(C > 0 || C >= 0)){
+                    C = 0;
+                }
+                
+                var negB = 0 - x2;
+                var bSqrd = x2 * x2;
+                var fourAC = 4 * x1 * C; 
+                var twoA = 2 * x1;
 
-
-                var area = Math.PI * r * r;          // Calculate area of bottom circle
-                vol.value = (area * h).toFixed(2);   // Show volume of cylinder to 2 decimal places
+                var ans1 = (negB + Math.sqrt(bSqrd - fourAC)) / twoA; // calculate answer with plus
+                var ans2 = (negB - Math.sqrt(bSqrd - fourAC)) / twoA; // calculate answer with minus
+                answer1.value = ans1;
+                answer2.value = ans2;
             }
         </script>
         <style>
@@ -22,14 +38,16 @@
         </style>
     </head>
     <body>
-        <h1>Cylinder volume:</h1>
-        <img src="https://www.google.com/imgres?imgurl=http%3A%2F%2Fmathbitsnotebook.com%2FAlgebra1%2FQuadratics%2Fquadbutton1.jpg&imgrefurl=http%3A%2F%2Fmathbitsnotebook.com%2FAlgebra1%2FQuadratics%2FQDquadform.html&docid=b6xudHO5BDh3WM&tbnid=PTSclXmHseJoxM%3A&vet=1&w=355&h=210&safe=strict&bih=974&biw=1920&ved=0ahUKEwjal5zEh-DQAhVlxVQKHYgcD8MQMwg-KAQwBA&iact=mrc&uact=8" style="float: left; height: 150px; margin-right: 5px;">
-        <h2>v = h &pi; r <sup>2</sup></h2>
+        <h1>Quadratic Formula:</h1>
+        <img src="Quadratic.png" style="float: left; height: 150px; margin-right: 5px;">
+        <h2>Find the value of X in a quadratic equation <br> given: ax<sup>2</sup> + bx + c = 0</h2>
         
-        h: <input type="number" id="height" placeholder="height"><br>
-        r: <input type="number" id="rad" placeholder="radius">
+        <input type="number" id="X2 Coefficient" placeholder="A">X<sup>2</sup> +
+        <input type="number" id="X Coefficient" placeholder="B">X + 
+        <input type="number" id="C" placeholder="C"> = 0
         <button onclick="calc();">Calculate</button>
         <hr>
-        v: <input type="output" id="vol" placeholder="volume" readonly>
+        X = <input type="output" id="1" placeholder="1st answer" readonly> 
+            <input type="output" id="2" placeholder="2nd answer" readonly>
     </body>
 </html>

@@ -31,6 +31,9 @@ function buildMap(id){
     
     var li8 = append("https://perryma.tk/HypoInTravicle/todolist.html", "You can type a to-do list here");
     unorderedList2.appendChild(li8);
+    
+    var li9 = append("https://perryma.tk/HypoInTravicle/Calculator.html", "Click here for a calculator that calculates Quadratic equations");
+    unorderedList2.appendChild(li9);
 }
 
 function append(link, text){
