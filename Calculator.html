@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Cylinder Calc</title>
+        <script>
+            function calc() {
+                var h = parseFloat(document.getElementById("height").value);
+                var r = parseFloat(document.getElementById("rad").value);
+                var vol = document.getElementById("vol");
+
+
+                var area = Math.PI * r * r;          // Calculate area of bottom circle
+                vol.value = (area * h).toFixed(2);   // Show volume of cylinder to 2 decimal places
+            }
+        </script>
+        <style>
+            input[type=number] {
+                width: 64px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Cylinder volume:</h1>
+        <img src="https://www.google.com/imgres?imgurl=http%3A%2F%2Fmathbitsnotebook.com%2FAlgebra1%2FQuadratics%2Fquadbutton1.jpg&imgrefurl=http%3A%2F%2Fmathbitsnotebook.com%2FAlgebra1%2FQuadratics%2FQDquadform.html&docid=b6xudHO5BDh3WM&tbnid=PTSclXmHseJoxM%3A&vet=1&w=355&h=210&safe=strict&bih=974&biw=1920&ved=0ahUKEwjal5zEh-DQAhVlxVQKHYgcD8MQMwg-KAQwBA&iact=mrc&uact=8" style="float: left; height: 150px; margin-right: 5px;">
+        <h2>v = h &pi; r <sup>2</sup></h2>
+        
+        h: <input type="number" id="height" placeholder="height"><br>
+        r: <input type="number" id="rad" placeholder="radius">
+        <button onclick="calc();">Calculate</button>
+        <hr>
+        v: <input type="output" id="vol" placeholder="volume" readonly>
+    </body>
+</html>
