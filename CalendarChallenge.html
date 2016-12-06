@@ -4,12 +4,46 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>Calendar</title>
+        <style>
+            table, td, th {
+                border: solid 1px;
+            }
+            th {
+                font-weight: bold;
+            }
+        </style>
         <script>
             function makeCalendar() {
                 var table = document.createElement("table");
                 var body = document.body;
                 body.appendChild(table);
                 
+                for(var i = 0; i < 7; i++){
+                    var day = document.createElement("th");
+                    day.textContent = getDayName(i);
+                    table.appendChild(day);
+                }
+                
+                var tr = document.createElement("tr");
+                table.appendChild(tr);
+                
+                         
+                
+                for(var i = 0; i < 31 + getFirstDay(11, 2016); i++){
+                    var cell = document.createElement("td");
+                    var day = i + 1 - getFirstDay(11, 2016);
+                    if(day > 0){
+                        cell.textContent = day;
+                        tr.appendChild(cell);
+                    } else {
+                        cell.style.border = "0";
+                    }
+                    
+                    if(i % 7 == 0){
+                        var tr = document.createElement("tr");
+                        table.appendChild(tr);
+                    }
+                }
             }
             
             function getDayName(dayNum){
@@ -30,6 +64,12 @@
                         return "Saturday";    
                 }
             }
+            
+            function getFirstDay(month, year) {
+                var date = new Date(year, month, 1);
+                return date.getDay();
+            }
+
         </script>
     </head>
     <body onload="makeCalendar();">
