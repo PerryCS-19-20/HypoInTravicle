@@ -13,36 +13,129 @@
             }
         </style>
         <script>
+            var today = new Date();
+            var month = today.getMonth();
+            var year = today.getFullYear(); 
+            
             function makeCalendar() {
-                var table = document.createElement("table");
-                var body = document.body;
-                body.appendChild(table);
+                var title = document.createElement("h1");
+                
+                title.textContent = getMonthName(month);
+                title.class = "calendar";
+                var body = document.body; 
+                body.appendChild(title);
+                
+                var button1 = document.createElement("button");
+                var button2 = document.createElement("button");
+                var button3 = document.createElement("button");
+                var button4 = document.createElement("button");
+                button1.class = "calendar";
+                button1.class = "calendar";
+                button1.class = "calendar";
+                button1.class = "calendar";
+                button1.textContent = "<<";
+                button2.textContent = "<";
+                button3.textContent = ">";
+                button4.textContent = ">>";
+                button1.onclick = prevYear;
+                button2.onclick = prevMonth;
+                button3.onclick = nextMonth;
+                button4.onclick = nextYear;
+                body.appendChild(button1);
+                body.appendChild(button2);
+                body.appendChild(button3);
+                body.appendChild(button4);
+                
+                var calendar = document.getElementByClass("calendar");
+                if (calendar != null) {
+                    calendar.parentNode.removeChild(calendar);
+                }
+                
+                var calendar=document.createElement("table");
+                calendar.class= "calendar";           
+                body.appendChild(calendar);
                 
                 for(var i = 0; i < 7; i++){
                     var day = document.createElement("th");
                     day.textContent = getDayName(i);
-                    table.appendChild(day);
+                    calendar.appendChild(day);
                 }
                 
                 var tr = document.createElement("tr");
-                table.appendChild(tr);
+                calendar.appendChild(tr);                        
                 
-                         
-                
-                for(var i = 0; i < 31 + getFirstDay(11, 2016); i++){
+                for(var i = 0; i < getNumDays(month, year) - 1 + getFirstDay(month, year); i++){
                     var cell = document.createElement("td");
-                    var day = i + 1 - getFirstDay(11, 2016);
+                    var day = i + 1 - getFirstDay(month, year);
                     if(day > 0){
-                        cell.textContent = day;
-                        tr.appendChild(cell);
+                        cell.textContent = day;                        
                     } else {
                         cell.style.border = "0";
                     }
-                    
+                    tr.appendChild(cell);
                     if(i % 7 == 0){
                         var tr = document.createElement("tr");
-                        table.appendChild(tr);
+                        calendar.appendChild(tr);
                     }
+                }
+            }
+            
+            function prevYear(){
+                month = 11;
+                year = year - 1;
+                makeCalendar();
+            }
+            
+            function prevMonth(){
+                if(month == 0){
+                    prevYear();
+                } else {
+                    month = month - 1;
+                    makeCalendar();
+                }
+            }
+            
+            function nextMonth(){
+                if(month == 11){
+                    nextYear();
+                } else {
+                    month = month + 1;
+                    makeCalendar();
+                }
+            }
+            
+            function nextYear(){
+                month = 0;
+                year = year + 1;
+                makeCalendar();
+            }
+            
+            function getMonthName(month){
+                switch(month){
+                    case 0:
+                        return "January";
+                    case 1:
+                        return "February";
+                    case 2:
+                        return "March";
+                    case 3:
+                        return "April";
+                    case 4:
+                        return "May";
+                    case 5:
+                        return "June";    
+                    case 6:
+                        return "July";
+                    case 8:
+                        return "August";
+                    case 9:
+                        return "September";
+                    case 10:
+                        return "October";    
+                    case 11:
+                        return "November";
+                    case 12:
+                        return "December";
                 }
             }
             
@@ -69,6 +162,12 @@
                 var date = new Date(year, month, 1);
                 return date.getDay();
             }
+            
+            function getNumDays(month, year) {
+                var date = new Date(year, month+1, 0);
+                return date.getDate();
+            }
+
 
         </script>
     </head>
