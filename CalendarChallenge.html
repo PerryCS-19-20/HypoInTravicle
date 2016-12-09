@@ -18,6 +18,10 @@
             var year = today.getFullYear(); 
             
             function makeCalendar() {
+                var body = document.body;
+                while(body.firstChild != null){
+                    body.removeChild(body.firstChild);
+                }
                 var title = document.createElement("h1");
                 
                 title.textContent = getMonthName(month);
@@ -44,12 +48,7 @@
                 body.appendChild(button1);
                 body.appendChild(button2);
                 body.appendChild(button3);
-                body.appendChild(button4);
-                
-                var calendar = document.getElementByClass("calendar");
-                if (calendar != null) {
-                    calendar.parentNode.removeChild(calendar);
-                }
+                body.appendChild(button4);             
                 
                 var calendar=document.createElement("table");
                 calendar.class= "calendar";           
@@ -64,7 +63,7 @@
                 var tr = document.createElement("tr");
                 calendar.appendChild(tr);                        
                 
-                for(var i = 0; i < getNumDays(month, year) - 1 + getFirstDay(month, year); i++){
+                for(var i = 0; i < getNumDays(month, year) + getFirstDay(month, year); i++){
                     var cell = document.createElement("td");
                     var day = i + 1 - getFirstDay(month, year);
                     if(day > 0){
@@ -81,7 +80,7 @@
             }
             
             function prevYear(){
-                month = 11;
+                month = 12;
                 year = year - 1;
                 makeCalendar();
             }
@@ -96,7 +95,7 @@
             }
             
             function nextMonth(){
-                if(month == 11){
+                if(month == 12){
                     nextYear();
                 } else {
                     month = month + 1;

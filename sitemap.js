@@ -34,6 +34,9 @@ function buildMap(id){
     
     var li9 = append("https://perryma.tk/HypoInTravicle/Calculator.html", "Click here for a calculator that calculates Quadratic equations");
     unorderedList2.appendChild(li9);
+    
+    var li10 = append("https://perryma.tk/HypoInTravicle/CalendarChallenge.html", "Here's a Calendar for today's month");
+    unorderedList2.appendChild(li10);
 }
 
 function append(link, text){
